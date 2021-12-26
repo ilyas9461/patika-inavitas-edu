@@ -1,7 +1,7 @@
 # Patika Inavitas Node.js Bootcamp
 
 <p align="center">
-<img src="./img/Bootcamp Duyuru2-p-800.jpeg" width="200">
+<img src="./img/Bootcamp Duyuru2-p-800.jpeg" width="300">
 </p>
 
 https://www.patika.dev/bootcamp/inavitas-node-js-bootcamp
