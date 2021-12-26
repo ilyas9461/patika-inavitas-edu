@@ -1,6 +1,4 @@
-const {
-  pg_client
-} = require("../../adapters/database/postgresql");
+const {pg_client} = require("../../adapters/database/postgresql");
 
 const deviceTypeIndexGet = (req, res) => {
   /* return value:
