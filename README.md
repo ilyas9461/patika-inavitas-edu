@@ -8,4 +8,6 @@ https://www.patika.dev/bootcamp/inavitas-node-js-bootcamp
 
 Bootcamp kapsamında yapılan çalışmalar ve hazırlanan dökümanlar bu repoda yer almaktadır. Emeği geçen herkese çok teşekkürler.
 
-<a href="case-study1"> case-study1 </a>
+### Ödev Çalışmaları :
+
+<a href="https://github.com/ilyas9461/patika-inavitas-edu/tree/main/case-study1">1- case-study 1 </a>

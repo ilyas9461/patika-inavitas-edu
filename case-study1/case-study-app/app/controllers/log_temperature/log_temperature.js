@@ -1,7 +1,6 @@
 const { pg_client } = require("../../adapters/database/postgresql");
 
-const logTemperatureIndexGet = (req, res) => {
-    let queryToDo = "Select vehicle_id, device_id, read_data, created_at from log_temperature";
+const logTemperatureIndexGet = (req, res) => {   
     /*
       [
         {
@@ -12,7 +11,7 @@ const logTemperatureIndexGet = (req, res) => {
         }
     ]
     */
-  
+    let queryToDo = "Select vehicle_id, device_id, read_data, created_at from log_temperature";
     pg_client.query(queryToDo, (err, result) => {
       if (err) {
         console.log(err);
@@ -35,14 +34,13 @@ const logTemperatureIndexGet = (req, res) => {
         }
     */
     let obj = req.body;
-    let objToArr = Object.values(obj);
+    let objToArr = Object.values(obj);  //object to array
     console.log(objToArr);
-  
+    // array elements to pair $1,$2 ... 
     let queryToDo = "insert into log_temperature (vehicle_id, device_id, read_data, created_at)" + 
                     "values($1, $2, $3, $4)";
   
-    pg_client
-      .query(queryToDo, objToArr)
+    pg_client.query(queryToDo, objToArr)
       .then((result) => {
         res.status(200).send("OK");
         res.end();

@@ -1,4 +1,4 @@
-/*  */
+/* request routes controllers */
 
 const { homeIndex, homeIndexGet } = require("../controllers/home/home");
 const { vehicleIndexGet, vehicleIndexPost,vehicleIndexPatch,vehicleIndexDelete } = require("../controllers/vehicle/vehicle");
@@ -12,7 +12,7 @@ const router = express.Router();
 router.route("/home").post(homeIndex).get(homeIndexGet);
 // chain methods
 router.route("/vehicle")
-    .get(vehicleIndexGet)  //conroller functions
+    .get(vehicleIndexGet)       //conroller functions
     .post(vehicleIndexPost)
     .patch(vehicleIndexPatch)
     .delete(vehicleIndexDelete);

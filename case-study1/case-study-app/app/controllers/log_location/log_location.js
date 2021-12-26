@@ -1,7 +1,6 @@
 const { pg_client } = require("../../adapters/database/postgresql");
 
 const logLocationIndexGet = (req, res) => {
-    let queryToDo = "Select vehicle_id, device_id, latitude, longtitude, created_at from log_location";
     /*
         [
             {
@@ -13,7 +12,7 @@ const logLocationIndexGet = (req, res) => {
             }
         ]
     */
-  
+    let queryToDo = "Select vehicle_id, device_id, latitude, longtitude, created_at from log_location";
     pg_client.query(queryToDo, (err, result) => {
       if (err) {
         console.log(err);
@@ -27,7 +26,7 @@ const logLocationIndexGet = (req, res) => {
   };
 
   const logLocationIndexPost= (req, res) => {
-    /* 
+    /* request body json data:
         {
             "vehicle_id":1,
             "device_id":1,
@@ -37,14 +36,13 @@ const logLocationIndexGet = (req, res) => {
         }
     */
     let obj = req.body;
-    let objToArr = Object.values(obj);
+    let objToArr = Object.values(obj);  //object to array
     console.log(objToArr);
-  
+    // array elements to pair $1,$2 ...    
     let queryToDo = "insert into log_location (vehicle_id, device_id, latitude, longtitude, created_at)" + 
                     "values($1, $2, $3, $4, $5)";
   
-    pg_client
-      .query(queryToDo, objToArr)
+    pg_client.query(queryToDo, objToArr)
       .then((result) => {
         res.status(200).send("OK");
         res.end();
