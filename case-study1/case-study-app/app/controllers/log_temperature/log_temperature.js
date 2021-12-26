@@ -15,10 +15,10 @@ const logTemperatureIndexGet = (req, res) => {
     pg_client.query(queryToDo, (err, result) => {
       if (err) {
         console.log(err);
+        res.status(500).send(err); // some server error.
         res.end();
       }
       console.log(result.rows);
-  
       res.send(result.rows);
       res.end();
     });
@@ -47,6 +47,7 @@ const logTemperatureIndexGet = (req, res) => {
       })
       .catch((err) => {
         console.log(err);
+        res.status(500).send(err); // some server error.
         res.end();
       });
 };

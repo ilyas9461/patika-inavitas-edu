@@ -19,6 +19,7 @@ const deviceTypeIndexGet = (req, res) => {
   pg_client.query(queryToDo, (err, result) => {
     if (err) {
       console.log(err);
+      res.status(500).send(err); // some server error.
       res.end();
     } else {
       console.log(result.rows);
@@ -51,6 +52,7 @@ const deviceTypeIndexPost = (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      res.status(500).send(err); // some server error.
       res.end();
     });
 };
@@ -75,6 +77,7 @@ const deviceTypeIndexDelete = (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      res.status(500).send(err); // some server error.
       res.end();
     });
 };

@@ -39,10 +39,11 @@ const deviceIndexGet = (req, res) => {
   pg_client.query(queryToDo, (err, result) => {
     if (err) {
       console.log(err);
+      res.status(500).send(err);    // Some server error
       res.end();
     } else {
       console.log(result.rows);
-      res.send(result.rows);
+      res.status(200).send(result.rows);
       res.end();
     }
   });
@@ -70,6 +71,7 @@ const deviceIndexPost = (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      res.status(500).send(err); // some server error.
       res.end();
     });
 }; // post
@@ -110,6 +112,7 @@ const deviceIndexPatch = (req, res) => {
     })
     .catch((err) => {
       console.log(err);
+      res.status(500).send(err); // some server error.
       res.end();
     });
 };// patch
