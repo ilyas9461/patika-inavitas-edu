@@ -1,6 +1,4 @@
-const {
-  pg_client
-} = require("../../adapters/database/postgresql");
+const {pg_client} = require("../../adapters/database/postgresql");
 
 const deviceIndexGet = (req, res) => {
   /* return values :
@@ -36,9 +34,8 @@ const deviceIndexGet = (req, res) => {
 ]
    */
 
-  let queryToDo =
-    "Select  devices.id, vehicles.vehicle_plate, devices.device_name, devices.is_online, devices.is_active" +
-    " from devices  inner join vehicles on devices.vehicle_id=vehicles.id order by devices.id asc"; // query string.
+  let queryToDo = "Select  devices.id, vehicles.vehicle_plate, devices.device_name, devices.is_online, devices.is_active" +
+                  " from devices  inner join vehicles on devices.vehicle_id=vehicles.id order by devices.id asc"; // query string.
   pg_client.query(queryToDo, (err, result) => {
     if (err) {
       console.log(err);
