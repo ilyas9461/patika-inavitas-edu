@@ -46,7 +46,7 @@ const deviceIndexGet = (req, res) => {
       res.end();
     }
   });
-}; //get
+}; // get
 
 const deviceIndexPost = (req, res) => {
   /* request body json data:
@@ -72,7 +72,7 @@ const deviceIndexPost = (req, res) => {
       console.log(err);
       res.end();
     });
-}; //post
+}; // post
 
 const deviceIndexPatch = (req, res) => {
   /* // request body json data 
@@ -112,7 +112,7 @@ const deviceIndexPatch = (req, res) => {
       console.log(err);
       res.end();
     });
-};
+};// patch
 
 const deviceIndexDelete = (req, res) => {
   /*   { //reguest json data
@@ -137,7 +137,7 @@ const deviceIndexDelete = (req, res) => {
       console.log(err);
       res.end();
     });
-};
+};// delete
 
 module.exports = {
   deviceIndexGet,
